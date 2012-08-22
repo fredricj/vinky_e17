@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+ <email>fredric.miscmail@gmail.com</email>
+</maintainer>
+<use>
+ <flag name='ps'>Support for the ps file format</flag>
+</use>
+<longdescription>
+Generic loaders that supports fileformats not supported by evas itself.
+</longdescription>
+</pkgmetadata>
