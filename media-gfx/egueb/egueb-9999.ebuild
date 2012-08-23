@@ -8,7 +8,7 @@ inherit subversion autotools
 ESVN_REPO_URI="http://enesim.googlecode.com/svn/trunk/${PN}"
 ESVN_PROJECT="enesim/${PN}"
 
-DESCRIPTION="Enesim is direct rendering graphics library"
+DESCRIPTION="Egueb is a media library providing svg loading"
 HOMEPAGE="http://code.google.com/p/enesim"
 LICENSE="LGPL-2.1"
 IUSE="doc"

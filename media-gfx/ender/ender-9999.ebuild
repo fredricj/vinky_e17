@@ -8,7 +8,7 @@ inherit subversion autotools
 ESVN_REPO_URI="http://enesim.googlecode.com/svn/trunk/${PN}"
 ESVN_PROJECT="enesim/${PN}"
 
-DESCRIPTION="Ender"
+DESCRIPTION="Ender is a renderer for use with the enesim graphics framework."
 HOMEPAGE="http://code.google.com/p/enesim"
 LICENSE="LGPL-2.1"
 IUSE="doc"
