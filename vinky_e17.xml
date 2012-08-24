@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+<repo quality="experimental" status="unofficial">
+    <name>Vinky_e17_extra</name>
+    <description>Extra ebuilds for the enlightenment overlay</description>
+    <homepage>http://github.com/fredricj/vinky_e17</homepage>
+    <owner type="project">
+        <email>fredricj@users.berlios.de</email>
+        <name></name>
+    </owner>
+    <source type="git">git://github.com/fredricj/vinky_e17.git</source>
+</repo>
+</repositories>
+
