@@ -3,6 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-libs/eet/eet-9999.ebuild,v 1.4 2005/03/25 17:51:29 vapier Exp $
 
 EAPI=2
+ESVN_URI_APPEND="eobj"
 ESVN_SUB_PROJECT="PROTO"
 inherit enlightenment
 
