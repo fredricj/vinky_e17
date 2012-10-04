@@ -9,13 +9,14 @@ inherit enlightenment
 DESCRIPTION="hardware-accelerated retained canvas API"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Evas"
 
-IUSE="altivec bidi +bmp directfb +eet fbcon +fontconfig gles gif +ico +jpeg mmx opengl +png +ppm +psd sdl sse sse3 svg static-libs tga +threads tiff X xcb xpm"
+IUSE="altivec bidi +bmp directfb +eet fbcon +fontconfig gles gif +ico +jpeg mmx opengl +png +ppm +psd sdl sse sse3 svg static-libs tga +threads tiff wayland X xcb xpm"
 
 RDEPEND="
 	>=dev-libs/eina-9999
+	>=dev-libs/eobj-9999
 	>=media-libs/freetype-2.3.9
 	fontconfig? ( media-libs/fontconfig )
-	gles? ( || ( media-libs/mesa[gallium,gles] media-libs/mesa[gallium,gles1,gles2] ) )
+	gles? ( media-libs/mesa[gallium,gles2] )
 	gif? ( media-libs/giflib )
 	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
@@ -24,6 +25,7 @@ RDEPEND="
 	sdl? ( media-libs/libsdl )
 	tiff? ( media-libs/tiff )
 	xpm? ( x11-libs/libXpm )
+	wayland? ( dev-libs/wayland )
 	X? (
 		x11-libs/libX11
 		x11-libs/libXext
@@ -35,7 +37,11 @@ RDEPEND="
 			x11-libs/xcb-util
 		) )
 	eet? ( >=dev-libs/eet-9999 )
-	svg? ( >=media-gfx/egueb-9999 )"
+	svg? (
+		>=gnome-base/librsvg-2.14.0
+		x11-libs/cairo
+		x11-libs/libsvg-cairo
+	)"
 DEPEND="${RDEPEND}"
 
 src_configure() {
@@ -62,11 +68,7 @@ src_configure() {
 		"
 	fi
 
-#		$(use_enable cache metric-cache)
-#		$(use_enable cache word-cache)
 	MY_ECONF+="
-		--disable-metric-cache
-		--disable-word-cache
 		$(use_enable altivec cpu-altivec)
 		$(use_enable bidi fribidi)
 		$(use_enable bmp image-loader-bmp)
@@ -95,7 +97,8 @@ src_configure() {
 		$(use_enable threads pthreads)
 		$(use_enable threads async-events)
 		$(use_enable threads async-preload)
-		$(use_enable threads async-render)
+		$(use_enable wayland wayland-egl)
+		$(use_enable wayland wayland-shm)
 		$(use_enable X software-xlib)
 		$(use_enable xpm image-loader-xpm)
 		--enable-evas-magic-debug \
