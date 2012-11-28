@@ -17,7 +17,7 @@ LICENSE="LGPL-2.1"
 RDEPEND="png? ( media-libs/libpng )
 	jpeg? ( virtual/jpeg )
 	freetype? ( media-libs/freetype )
-	>=dev-libs/eina-9999"
+	>=dev-libs/eina-1.7"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
